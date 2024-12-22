@@ -1,0 +1,27 @@
+name: Python application
+
+on:
+  push:
+    branches:
+      - master  # This will run the workflow when you push changes to the 'master' branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # This means it will run on a Linux-based environment
+
+    steps:
+    - uses: actions/checkout@v2  # Check out the repository
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'  # Use the latest Python version
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt  # Install dependencies from requirements.txt (if you have this file)
+
+    - name: Run Python script
+      run: |
+        python test_weather_model.py  # Replace with the actual name of your script
