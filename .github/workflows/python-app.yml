@@ -24,4 +24,4 @@ jobs:
 
     - name: Run Python script
       run: |
-        python test_weather_model.py  # Replace with the actual name of your script
+        python weather-model/tests/test_weather_model.py  # Replace with the actual name of your script
